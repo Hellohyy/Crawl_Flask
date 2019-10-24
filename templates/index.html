@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% import "page.html" as pg %}
+<script type="text/javascript">
+
+</script>
+
+{% block title %}数据表{% endblock %}
+
+{% block main %}
+<div class="jumbotron" >
+    <h1 style="text-align: center">Hello!</h1>
+    <p style="text-align: center">爬取中传要闻.</p>
+    <p style="text-align: center"><a class="btn btn-primary btn-lg" href="/start_crawl1" role="button">启动一层爬虫</a></p>
+    <p style="text-align: center"><a class="btn btn-primary btn-lg" href="/start_crawl2" role="button">启动二层爬虫</a></p>
+</div>
+
+{% endblock %}

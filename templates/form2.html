@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% import "page.html" as pg %}
+<script type="text/javascript">
+    function del(obj) {
+        var params=$('#obj').serialize
+        $.ajax({
+                url: "/s_delete/",   //对应flask中的路由
+                type: "POST", //请求方法
+                data: params,   //传送的数据
+                dataType: "json", //传送的数据类型
+                success: function (data) {  //成功得到返回数据后回调的函数
+                    console.log(data)
+                }
+            })
+    }
+</script>
+
+{% block title %}数据表{% endblock %}
+
+{% block main %}
+
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+{#            <a id="add" href="/add/" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">添加</a>#}
+
+			<div style="float: left;" class="datagrid-btn-separator"></div>
+        <span class="sr-only">(current)</span></li>
+
+        <form action="" method="post" class="navbar-form navbar-left">
+            <div class="form-group">
+                <input type="text"  name="search_id" class="form-control" placeholder="Search">
+            </div>
+                <button type="submit" class="btn btn-default">查找</button>
+        </form>
+        </ul>
+     </div>
+
+    <table class="table table-bordered">
+    <tr>
+        <th>记录ID</th>
+        <th>新闻标题</th>
+        <th>新闻链接</th>
+        <th>新闻内容</th>
+        <th>访问次数</th>
+        <th>来源</th>
+        <th>发布时间</th>
+        <th>操作</th>
+    </tr>
+        {% for i in page_data.items %}
+            <tr>
+                <form action="" method="POST">
+                    <td name="{{ i.ID }}">{{ i.ID }}</td>
+                    <td>{{ i.Title }}</td>
+                    <td>{{ i.NewsURL }}</td>
+                    <td>{{ i.content }}</td>
+                    <td>{{ i.visit_time }}</td>
+                    <td>{{ i.src }}</td>
+                    <td>{{ i.time }}</td>
+                    <td>
+                        <a href="/s_delete/?id={{i.ID}}">删除</a>
+{#                        <a href="/update/?id={{i.ID}}">修改</a>#}
+                    </td>
+                 </form>
+            </tr>
+    {% endfor %}
+    </table>
+    <tfoot>
+        <tr >
+            <td colspan="6" style="width: 1519px">
+                <div class="pagination-info pull-left" style="width:1519px;text-align: center;float: left">
+                    共有{{ page_data.total }}条，每页显示：{{ page_data.per_page }}条
+                </div>
+                <div class="pull-right king-page-box" style="width:1519px;display:flex;align-items:center;justify-content:center;">
+                    {{ pg.page(page_data, 'form') }}
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+
+{% endblock %}
