@@ -15,7 +15,7 @@
     }
 </script>
 
-{% block title %}数据表{% endblock %}
+{% block title %}新闻详情数据表{% endblock %}
 
 {% block main %}
 
@@ -40,7 +40,7 @@
     <tr>
         <th>记录ID</th>
         <th>新闻标题</th>
-        <th>新闻链接</th>
+{#        <th>新闻链接</th>#}
         <th>新闻内容</th>
         <th>访问次数</th>
         <th>来源</th>
@@ -51,8 +51,8 @@
             <tr>
                 <form action="" method="POST">
                     <td name="{{ i.ID }}">{{ i.ID }}</td>
-                    <td>{{ i.Title }}</td>
-                    <td>{{ i.NewsURL }}</td>
+                    <td><a href="{{ i.NewsURL }}">{{ i.Title }}</a></td>
+{#                    <td>{{ i.NewsURL }}</td>#}
                     <td>{{ i.content }}</td>
                     <td>{{ i.visit_time }}</td>
                     <td>{{ i.src }}</td>
@@ -72,7 +72,7 @@
                     共有{{ page_data.total }}条，每页显示：{{ page_data.per_page }}条
                 </div>
                 <div class="pull-right king-page-box" style="width:1519px;display:flex;align-items:center;justify-content:center;">
-                    {{ pg.page(page_data, 'form') }}
+                    {{ pg.page(page_data, 'form2') }}
                 </div>
             </td>
         </tr>

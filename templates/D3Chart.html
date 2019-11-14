@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% import "page.html" as pg %}
+{% block title %}词云图{% endblock %}
+
+    <div style="width:800px;height:800px" >
+        <img src="{{ url_for("static", filename="images/教育.png") }}" style="width:800px;height:800px">
+    </div>
+
+{% block main %}
+{#    <script src="static\js\d3.min.js"></script>#}
+{#    <script src="static\js\d3.v3.min.js"></script>#}
+{#    <script src="static\js\d3.layout.cloud.js"></script>#}
+    <script src="{{ url_for("static", filename="js/d3.v3.min.js") }}" ></script>
+    <script src="{{ url_for("static", filename="js/d3.layout.cloud.js") }}"></script>
+    <style>
+        .tooltip{
+    font-family: simsun;
+     font-size: 70%;
+     width: 120px;
+     height: auto;
+     position: absolute;
+     text-align: center;
+     padding: 1px;
+     border: 1px solid darkgray;
+     background-color: white;
+}
+    </style>
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+			<div style="float: left;" class="datagrid-btn-separator"></div>
+        <span class="sr-only">(current)</span></li>
+        <form action="/WordCloudData" method="POST" class="navbar-form navbar-left">
+            <div class="form-group">
+                <input type="text" name="search_word" class="form-control" placeholder="{{ keyword }}">
+            </div>
+                <button type="submit" class="btn btn-default">查找</button>
+        </form>
+        </ul>
+     </div>
+    <div id="d3_cloud" style="height: 200px"></div>
+{#    <svg id="myreact" width="800" height="300"></svg>#}
+    <div id="words_data" style="height: 400px">
+
+    </div>
+
+    <script>
+    var words_list = {{ words_list|tojson }};
+
+    var fill = d3.scale.category20();  //输出20种类别的颜色 ---颜色比例尺
+    var layout = d3.layout.cloud()
+        .size([360, 200])  //size([x,y]) 词云显示的大小
+        .words(words_list)
+        .padding(5)
+        .rotate(function() { return (Math.random() * 2) * 0; })
+        .font("Impact")
+        .fontSize(function(d) { return d.size; })
+        .on("end", draw);
+    layout.start();
+    function draw(words) {
+        d3.select("#d3_cloud").append("svg")
+            .attr("width", layout.size()[0])
+            .attr("height", layout.size()[1])
+            .append("g")
+            .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+            .selectAll("text")
+            .data(words)
+            .enter().append("text")
+            .style("font-size", function(d) { return d.size + "px"; })
+            .style("font-family", "Impact")
+            .style("fill", function(d, i) { return fill(i); })
+            .attr("text-anchor", "middle")
+            .attr("transform", function(d) {
+                return "translate(" + [d.x-2, d.y] + ")rotate(" + d.rotate + ")";
+            })
+            .text(function(d) { return d.text; })
+            .on("click",function (d,i){
+                url = "../click_WordCloudData/"+d.text;
+                window.location.href= url;
+          {#window.open("/click_WordCloudData/"+d.text,"_blank");#}
+      });;
+    }
+
+    //直方图
+    {#var mysvg = document.getElementById("myreact");#}
+	{#		//svg为从body里获取的矩形所起的名字#}
+	{#		var svgreact = new Array(10);#}
+	{#		//命名一个大小为10个元素的数组#}
+    {##}
+	{#		for(var i=0; i<10; i++){#}
+	{#			//画10个矩阵#}
+	{#			svgreact[i] = document.createElement("rect");#}
+	{#			//为数组元素创建节点rect#}
+	{#			mysvg.appendChild(svgreact[i]);#}
+	{#			//获取的矩阵svg的子节点为数组元素的节点#}
+	{#			var h = Math.random()*400;#}
+	{#			//设置一个随机数，范围为400以内#}
+	{#			svgreact[i].outerHTML="<rect x ="+(i*110)+" y="+(300-h)+" width=100 height="+h+" style='fill:blue' />"#}
+	{#			//设置矩形的方位：x为i乘以110，y为800减去随机数，矩形颜色充满红色fill red#}
+	{#		}#}
+
+			//zhi
+
+    var width = "100%";
+    var height ="100%";
+    var words_svg = d3.select("#words_data")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+        .attr("viewBox","0 0 820 85")
+        .attr("preserveAspectRatio","xMaxYMax meet")
+    .attr("style", "border: 1px solid black");
+
+var words = {{ words|tojson }};
+var words_count = [] ;
+var allwords =[];
+for(var i =0;i<30;i++){
+    allwords[i] = words[i][0];
+    words_count[i] = words[i][1];
+}
+
+var max_height = 140;
+var word_linear = d3.scale.linear() //这里语法不同
+        .domain([0, d3.max(words_count)])
+        .range([ max_height-5, 0]);
+
+console.log(allwords);
+var title = {title:["词频前三十"]};
+
+console.log(title)
+words_svg.selectAll("h1")
+    .data(title.title)
+    .enter()
+    .append("h1")
+    .attr("font-size","20px")
+    .attr("y", function(){return 10;})
+    .attr("x",function(){
+         return 20;
+    })
+  .attr("height",function(d){
+         return 20;
+    })
+    .attr("width", 20)
+  .text(function(d){
+           return Math.floor(d);
+  });
+
+var word_rect_width = 25;
+words_svg.selectAll("rect")
+    .data(words_count)
+    .enter()
+    .append("rect")
+        .attr("y", function(d){return word_linear(d)-75})
+    .attr("x",function(d,i){
+         return i * (word_rect_width + 1)+22;
+    })
+    .attr("height",function(d){
+         return max_height - word_linear(d);
+    })
+    .attr("width", word_rect_width)
+    {#.attr("fill","steelblue")#}
+    		.attr('fill', function(d) {
+			// 随机颜色
+			return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
+		})
+        .attr("opacity",0.4)
+        .on("mouseover",function(d,i){
+            d3.select(this)
+                .attr("opacity",1);
+
+          tooltip.html(i+1 +":{"+ allwords[i]+":"+ words_count[i]+"}")
+                    .style("left", (d3.event.pageX+10) + "px")
+                    .style("top", (d3.event.pageY - 10) + "px")
+                    .style("opacity",1.0)
+                    .style("font-size","15px");
+        })
+        .on("mouseout",function(d,i){
+            d3.select(this)
+                .transition()
+                .duration(500)
+                .attr("opacity",0.4);
+          tooltip.style("opacity",0.0);
+        })
+        .on("mousemove",function(d){
+                tooltip.style("left", (d3.event.pageX+ 10) + "px")
+                        .style("top", (d3.event.pageY - 10) + "px");
+            })
+        .on("click",function () {
+
+        });
+
+var tooltip = d3.select("body")
+                            .append("div")
+                            .attr("class","tooltip")
+                            .style("opacity",0.0);
+
+  var word_axis = d3.svg.axis() //这里语法不同
+            .scale(word_linear)
+          .orient("left")
+          .tickSize(780)
+          .ticks(4);
+
+  words_svg.append("g")
+        .attr("transform", "translate(800,-70)")
+   .call(word_axis)
+    .selectAll("text")
+      .attr("font-size", "70%");
+
+{#words_svg.selectAll("text")#}
+{#  .data(words_count)#}
+{#  .enter()#}
+{#  .append("text")#}
+{#  .attr("font-size","6px")#}
+{#  .attr("y", function(d){return word_linear(d)+5})#}
+{#    .attr("x",function(d,i){#}
+{#         return i * (word_rect_width + 1)+22;#}
+{#    })#}
+{#  .attr("height",function(d){#}
+{#         return max_height - word_linear(d);#}
+{#    })#}
+{#    .attr("width", word_rect_width)#}
+{#  .text(function(d){#}
+{#           return Math.floor(d);#}
+{#  });#}
+
+  words_svg.selectAll("line")
+        .attr("stroke","grey")
+        .attr("stroke-dasharray","2.2");
+
+
+
+words_svg.select(".domain").remove();
+</script>
+
+{% endblock %}

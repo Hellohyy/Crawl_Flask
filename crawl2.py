@@ -20,57 +20,62 @@ headers = {
     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:69.0) Gecko/20100101 Firefox'
 }
 
-def CrawlPage(url):
+def CrawlPage(url, flag):
     req = requests.session()
     req.headers = headers
+    second_list = second_crawl.query.all()
+    second_title_list = []
+    for sl in second_list:
+        second_title_list.append(sl.Title)
     try:
         res = req.get(url, headers=headers,timeout=10)
     except RequestException as e:
         print("爬取"+"页时响应未成功，休息5秒尝试再次请求~")
         return ["err"]
-    html = str(res.content,"utf-8")
-    soup = BeautifulSoup(html,"html.parser")
+    html = str(res.content, "utf-8")
+    soup = BeautifulSoup(html, "html.parser")
 
-    # Link = soup.find_all("span",attrs={"class":"WP_VisitCount"})
-    article = soup.find("article", attrs={"class", "con-area"}).get_text()
-    title = soup.find('h1').get_text()
-    newsurl = url
-    visit_time = soup.find("span", attrs={'class', 'WP_VisitCount'}).get_text()
-    src = soup.find("span", attrs={'class', 'arti-name'}).get_text().replace(' ', '').split('0', 1)[0][5:].split("\r", 1)[0]
-    time = soup.find("span", attrs={'class', 'arti-name'}).get_text().replace(' ', '').split('0', 1)[1][:8]
-    print(article)
-    print(newsurl)
-    print(visit_time)
-    print(title)
-    print(src)
-    print(time)
+    if flag is 1:
+        # Link = soup.find_all("span",attrs={"class":"WP_VisitCount"})
 
-    folder_path = 'E:\Photo\\'+title
+        title = soup.find('h1').get_text()
+        if title not in second_title_list:
+            article = soup.find("article", attrs={"class", "con-area"}).get_text()
+            newsurl = url
+            visit_time = soup.find("span", attrs={'class', 'WP_VisitCount'}).get_text()
+            src = soup.find("span", attrs={'class', 'arti-name'}).get_text().replace(' ', '').split('0', 1)[0][5:].split("\r", 1)[0]
+            time = soup.find("span", attrs={'class', 'arti-name'}).get_text().replace(' ', '').split('0', 1)[1][:8]
+            print(article)
+            print(newsurl)
+            print(visit_time)
+            print(title)
+            print(src)
+            print(time)
+            s_c = second_crawl(Title=title, content=article, NewsURL=newsurl, visit_time=visit_time, src=src, time=time, )
+            db.session.add(s_c)
+            db.session.commit()
 
-    # if os.path.exists(folder_path) == False:
-    #     #     os.makedirs(folder_path)
+    if flag is 2:
+        folder_path = 'E:\Photo\\'+title
+        if os.path.exists(folder_path) == False:
+            os.makedirs(folder_path)
 
-    reg_jpg = "/_upload.*?.jpg|/_upload.*?.png"
+        reg_jpg = "/_upload.*?.jpg|/_upload.*?.png"
+        img_src = str(soup.find_all("article", attrs={"class", "con-area"})).split("<")
+        imglist = []
+        for i_s in img_src:
+            imgre = re.compile(reg_jpg)
+            imglist_jpg = imgre.findall(str(soup.find_all("article", attrs={"class", "con-area"})))
+            if len(imgre.findall(i_s)) is not 0:
+                imglist.append(imgre.findall(i_s)[0])
+        x = 0
+        for img in imglist:
+            img = "http://www.cuc.edu.cn"+img
+            print(img)
+            urllib.request.urlretrieve(img, 'E:\Photo\\'+title+"\\"+'%s.jpg' % x)  # 下载图片
+            break
+            x += 1
 
-    img_src = str(soup.find_all("article", attrs={"class", "con-area"})).split("<")
-    imglist = []
-    for i_s in img_src:
-
-        imgre = re.compile(reg_jpg)
-        # imglist_jpg = imgre.findall(str(soup.find_all("article", attrs={"class", "con-area"})))
-        if len(imgre.findall(i_s)) is not 0:
-            imglist.append(imgre.findall(i_s)[0])
-    x = 0
-    # for img in imglist:
-    #     img = "http://www.cuc.edu.cn"+img
-    #     print(img)
-    #     urllib.request.urlretrieve(img, 'E:\Photo\\'+title+"\\"+'%s.jpg' % x)  # 下载图片
-    #     break
-    #     x += 1
-
-    s_c = second_crawl(Title=title, content=article, NewsURL=newsurl, visit_time=visit_time, src=src, time=time, )
-    db.session.add(s_c)
-    db.session.commit()
 
 def c_start_crawl2():
     cord = first_crawl.query.filter()
@@ -79,7 +84,7 @@ def c_start_crawl2():
         url = u.NewsURL
         if url.endswith('/page.htm'):
             # if u.ID > 16:
-            CrawlPage(url)
+            CrawlPage(url, 1)
 
 # if __name__=="__main__":
 #     # url ="http://www.cuc.edu.cn/news/2019/1008/c1901a140383/page.htm"
@@ -91,3 +96,13 @@ def c_start_crawl2():
 #         if url.endswith('/page.htm'):
 #             if u.ID >16:
 #                 CrawlPage(url)
+
+
+def c_start_crawl2_images():
+    cord = first_crawl.query.filter()
+    for u in cord:
+        print(u.NewsURL, u.ID)
+        url = u.NewsURL
+        if url.endswith('/page.htm'):
+            # if u.ID > 16:
+            CrawlPage(url, 2)

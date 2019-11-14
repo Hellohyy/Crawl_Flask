@@ -28,44 +28,52 @@ def connect():
 
 
 #def CrawlPage(page):
-def CrawlPage(url, page):
+def CrawlPage(url, page, first_list_title):
     req = requests.session()
     req.headers = headers
+
+
     try:
         res = req.get(url, headers=headers,timeout=10)
     except RequestException as e:
         print("爬取"+str(page+1)+"页时响应未成功，休息5秒尝试再次请求~")
-        return ["err",page]
-    html = str(res.content,"utf-8")
-    soup = BeautifulSoup(html,"html.parser")
+        return ["err", page]
+    html = str(res.content, "utf-8")
+    soup = BeautifulSoup(html, "html.parser")
 
-    Link = soup.find_all("ul",attrs={"class":"news-list g-line"})
+    Link = soup.find_all("ul", attrs={"class": "news-list g-line"})
     for i in range(len(Link)):
         Linkq = str(Link[i])
         Dsoup = BeautifulSoup(Linkq, 'html.parser')
         title = Dsoup.find("a").get_text()
-        titleurl = Dsoup.find("a").get('href')
-        src = Dsoup.find('p').get_text()
-        f_c = first_crawl(Title=title, NewsURL="http://www.cuc.edu.cn"+titleurl, src=src.split('|', 1)[0], time=src.split('|', 1)[1])
-        db.session.add(f_c)
-        db.session.commit()
-        print("标题：", title)
-        print("标题url：", "http://www.cuc.edu.cn"+titleurl)
-        print(src.split('|', 1)[0])
-        print("日期：", src.split('|', 1)[1])
-
+        if title not in first_list_title:
+            titleurl = Dsoup.find("a").get('href')
+            src = Dsoup.find('p').get_text()
+            f_c = first_crawl(Title=title, NewsURL="http://www.cuc.edu.cn"+titleurl, src=src.split('|', 1)[0], time=src.split('|', 1)[1])
+            db.session.add(f_c)
+            db.session.commit()
+            print("标题：", title)
+            print("标题url：", "http://www.cuc.edu.cn"+titleurl)
+            print(src.split('|', 1)[0])
+            print("日期：", src.split('|', 1)[1])
 
 
 def c_start_crawl1():
-    page = 1
-    while (page < 456):
+    page = 469
 
+    # 提取数据库所有标题
+    first_list = first_crawl.query.all()
+    first_list_title = [];
+    for fl in first_list:
+        first_list_title.append(fl.Title)
+
+    while(page > 0):
         print('\n', "爬取第" + str(page) + "页入口链接..")
         url = "http://www.cuc.edu.cn/news/1901/list" + str(
             page) + ".htm"
-        UrlList = CrawlPage(url, page)
+        UrlList = CrawlPage(url, page, first_list_title)
         print(UrlList)
-        page += 1
+        page -= 1
 
 
 # if __name__ == "__main__":
