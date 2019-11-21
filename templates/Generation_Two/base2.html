@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}-中传要闻爬虫</title>
+
+    <title>Colorlib Balita &mdash; Minimal Blog Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300, 400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename="css2/bootstrap.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename="css2/animate.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename="css2/owl.carousel.min.css") }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename="fonts/ionicons/css/ionicons.min.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename="fonts/fontawesome/css/font-awesome.min.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename="fonts/flaticon/font/flaticon.css") }}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{{ url_for('static',filename="css2/style.css") }}">
+    {% block head %}{% endblock %}
+</head>
+  <body>
+
+    <header role="banner">
+      <div class="top-bar">
+        <div class="container">
+          <div class="row">
+            <div class="col-9 social">
+              <a href="start_crawl" ><div class="fa fa-bug" title="开启增量爬虫" ></div></a>
+<!--              <a href="#"><span class="fa fa-facebook"></span></a>-->
+<!--              <a href="#"><span class="fa fa-instagram"></span></a>-->
+<!--              <a href="#"><span class="fa fa-youtube-play"></span></a>-->
+<!--              <a href="#"><span class="fa fa-vimeo"></span></a>-->
+<!--              <a href="#"><span class="fa fa-snapchat"></span></a>-->
+            </div>
+            <div class="col-3 search-top">
+              <!-- <a href="#"><span class="fa fa-search"></span></a> -->
+              <form action="#" class="search-top-form">
+                <span class="icon fa fa-search"></span>
+                <input type="text" id="s" placeholder="请输入查询关键字...">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container logo-wrap">
+        <div class="row pt-5">
+          <div class="col-12 text-center">
+            <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
+            <h1 class="site-logo"><a href="index.html">中传要闻</a></h1>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-md  navbar-light bg-light">
+        <div class="container">
+
+
+          <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">主页</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="category.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">要闻详情</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="category.html">新闻表单</a>
+<!--                  <a class="dropdown-item" href="category.html"></a>-->
+<!--                  <a class="dropdown-item" href="category.html">Dubai</a>-->
+<!--                  <a class="dropdown-item" href="category.html">Africa</a>-->
+<!--                  <a class="dropdown-item" href="category.html">South America</a>-->
+                </div>
+
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="category.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">要闻分析</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown05">
+                  <a class="dropdown-item" href="category.html">可视化图</a>
+<!--                  <a class="dropdown-item" href="category.html">直方图</a>-->
+<!--                  <a class="dropdown-item" href="category.html">Adventure</a>-->
+<!--                  <a class="dropdown-item" href="category.html">Travel</a>-->
+<!--                  <a class="dropdown-item" href="category.html">Business</a>-->
+                </div>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">关于我们</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">联系我们</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
+{% block main%}{% endblock %}
+
+</body>
+</html>

@@ -22,6 +22,49 @@ def hello_world():
     return 'Hello World!'
 
 
+@app.route('/index2')
+def base2():
+    return render_template("Generation_Two/index.html")
+
+
+@app.route('/test2')
+def test2():
+    keyword = "教育"
+    jieba.load_userdict("dict.txt")
+    stopwords = [line.strip() for line in open("stopword.txt", 'r', encoding='utf-8').readlines()]
+
+    allwords = []
+    words_count = []
+    news_titles = ""
+    search_content = keyword
+
+    news = first_crawl.query.filter(first_crawl.Title.like("%" + search_content + "%")).all()
+    for each_news in news:
+        each_title = each_news.Title
+        news_titles = news_titles + " " + str(each_title)
+        jieba_each_title = jieba.cut(each_title, cut_all=False)
+        for word in jieba_each_title:
+            if word not in allwords:
+                if word not in stopwords:
+                    if len(word) is not 1:
+                        allwords.append(str(word))
+                        words_count.append(1)
+            else:
+                words_count[allwords.index(word)] += 1
+    word_list = []
+    dict_sort = {}
+    dict = {}
+
+    fileObject = open("./static/test.json", 'w')
+    for i in range(len(allwords)):
+        dict[allwords[i]] = words_count[i]
+
+    print(len(dict))
+    # fileObject.write(json.dumps(dict, ensure_ascii=False))
+    # fileObject.close()
+    return render_template("Generation_Two/ActiveCloud.html", datas=json.dumps(dict, ensure_ascii=False))
+
+
 @app.route('/WordCloudData', methods=['GET', 'POST'])
 def WordCloudData():
     if request.method == 'POST':
@@ -58,14 +101,13 @@ def WordCloudData():
             dict['size'] = words_count[i]
             word_list.append(dict)
         # return render_template("D3Chart.html", words_list=word_list, allwords=allwords, words_count=words_count)
-        return render_template("D3Chart.html", words_list=word_list, words=sorted(dict_sort.items(), key=lambda d:d[1], reverse=True), keyword=keyword)
+        return render_template("Generation_Two/D3Chart.html", words_list=word_list, words=sorted(dict_sort.items(), key=lambda d:d[1], reverse=True), keyword=keyword)
     else:
-        return render_template("D3Chart.html", words_list=None, words=None, keyword="输入关键词")
+        return render_template("Generation_Two/D3Chart.html", words_list=None, words=None, keyword="输入关键词")
 
 
 @app.route('/click_WordCloudData/<string:kd>', methods=['GET', 'POST'])
 def click_WordCloudData(kd):
-
     keyword = kd
     jieba.load_userdict("dict.txt")
     stopwords = [line.strip() for line in open("stopword.txt", 'r', encoding='utf-8').readlines()]
@@ -96,9 +138,8 @@ def click_WordCloudData(kd):
         dict['text'] = allwords[i]
         dict['size'] = words_count[i]
         word_list.append(dict)
-    # return render_template("D3Chart.html", words_list=word_list, allwords=allwords, words_count=words_count)
-    print(word_list)
-    return render_template("D3Chart.html", words_list=word_list,
+    print(len(word_list))
+    return render_template("Generation_Two/D3Chart.html", words_list=word_list,
                            words=sorted(dict_sort.items(), key=lambda d: d[1], reverse=True), keyword=keyword)
 
 
@@ -170,22 +211,33 @@ def form(page=None, search=None):
         if search_content.isdigit():
             u = first_crawl.query.filter(first_crawl.ID == search_content).order_by(first_crawl.ID).paginate(page=page, per_page=50,
                                                                                                  error_out=False)
-            return render_template("form.html", page_data=u, search=search_content)
+            return render_template("Generation_Two/form.html", page_data=u, search=search_content)
         else:
             count = first_crawl.query.filter(first_crawl.Title.like("%" + search_content + "%")).count()
             u = first_crawl.query.filter(first_crawl.Title.like("%" + search_content + "%")).order_by(first_crawl.ID).paginate(
                 page=page,
                 per_page=50,
                 error_out=False)
-            return render_template("form.html", page_data=u, search=id)
+            return render_template("Generation_Two/form.html", page_data=u, search=id)
     else:
         cord = first_crawl.query.order_by(first_crawl.ID).paginate(page=page, per_page=50, error_out=False)
-        return render_template('form.html', page_data=cord)
+        return render_template('Generation_Two/form.html', page_data=cord)
+
+
+@app.route('/form_sortBydate/', methods=['GET', 'POST'])
+@app.route('/form_sortBydate/<int:page>', methods=['GET', 'POST'])
+def form_sortBydate(page=None):
+    count = first_crawl.query.filter().count()
+    u = first_crawl.query.filter().order_by(first_crawl.time).paginate(
+        page=page,
+        per_page=50,
+        error_out=False)
+    return render_template("Generation_Two/form.html", page_data=u, search=id)
 
 
 @app.route("/index")
 def index():
-    return render_template("index.html")
+    return render_template("Generation_Two/index.html")
 
 def a():
     i = 1
@@ -214,7 +266,7 @@ def start_crawl1():
     # # print(ppid)
     # # p.join()
 
-    return render_template("p.html")
+    return render_template("Generation_Two/p.html")
 
 
 @app.route("/start_crawl2")
@@ -230,6 +282,12 @@ def start_crawl2():
     pass
 
 
+@app.route("/start_crawl")
+def start_crawl():
+    c_start_crawl1()
+    c_start_crawl2()
+
+
 @app.route('/search_form/', methods=['GET', 'POST'])
 @app.route('/search_form/<int:page>', methods=['GET', 'POST'])
 # @app.route('/search_form/<string:search>/<int:page>', methods=['GET', 'POST'])
@@ -240,14 +298,14 @@ def search_form(page=None, search=None):
     if search_content.isdigit():
         u = first_crawl.query.filter(first_crawl.ID == search_content).order_by(first_crawl.ID).paginate(page=page, per_page=50,
                                                                                              error_out=False)
-        return render_template("search_form.html", page_data=u, search=search_content)
+        return render_template("Generation_Two/search_form.html", page_data=u, search=search_content)
     else:
         count = first_crawl.query.filter(first_crawl.Title.like("%" + search_content + "%")).count()
         u = first_crawl.query.filter(first_crawl.Title.like("%" + search_content + "%")).order_by(first_crawl.ID).paginate(
            page=page,
             per_page=count,
             error_out=False)
-        return render_template("search_form.html", page_data=u, search=id)
+        return render_template("Generation_Two/search_form.html", page_data=u, search=id)
 
 
 @app.route('/start_crawl2_images', methods=['GET', 'POST'])
@@ -260,21 +318,21 @@ def start_crawl2_images():
 def form2(page=None):
     if request.method == 'GET':
         cord = second_crawl.query.order_by(second_crawl.ID).paginate(page=page, per_page=50, error_out=False)
-        return render_template('form2.html', page_data=cord)
+        return render_template('Generation_Two/form2.html', page_data=cord)
     else:
         id = request.form.get("search_id")
         if id:
             if id.isdigit():
                 u = second_crawl.query.filter(second_crawl.ID==id).order_by(second_crawl.ID).paginate(page=page, per_page=10, error_out=False)
-                return render_template("form2.html", page_data=u)
+                return render_template("Generation_Two/form2.html", page_data=u)
             else:
                 u = second_crawl.query.filter(second_crawl.content.like("%" + id + "%")).order_by(second_crawl.ID).paginate(page=page,
                                                                                                      per_page=10,
                                                                                                      error_out=False)
-                return render_template("form2.html", page_data=u)
+                return render_template("Generation_Two/form2.html", page_data=u)
         else:
             u = second_crawl.query.order_by(second_crawl.ID).paginate(page=page, per_page=10, error_out=False)
-            return render_template("form2.html", page_data=u)
+            return render_template("Generation_Two/form2.html", page_data=u)
 
 
 @app.route("/f_delete/", methods=['GET'])
@@ -310,18 +368,18 @@ def wordcloud():
     value = [
         10000, 6181, 4386, 4055, 2467, 2244, 1898, 1484, 1112,
         965, 847, 582, 555, 550, 462, 366, 360, 282, 273, 265]
-    return render_template("pie.html")
+    return render_template("Generation_Two/pie.html")
 
 
 @app.route("/jieba1")
 def jieba1():
-    return render_template("D3Chart.html")
+    return render_template("Generation_Two/D3Chart.html")
 
 
 @app.route("/D3Chart")
 def D3Chart():
 
-    return render_template("D3test.html" )
+    return render_template("Generation_Two/D3test.html" )
 
 
 if __name__ == '__main__':
