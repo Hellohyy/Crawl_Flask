@@ -59,7 +59,7 @@ def CrawlPage(url, page, first_list_title):
 
 
 def c_start_crawl1():
-    page = 469
+    page = 473
 
     # 提取数据库所有标题
     first_list = first_crawl.query.all()

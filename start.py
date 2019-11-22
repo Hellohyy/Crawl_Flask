@@ -27,9 +27,14 @@ def base2():
     return render_template("Generation_Two/index.html")
 
 
-@app.route('/test2')
-def test2():
-    keyword = "教育"
+@app.route('/toActivecloud')
+def toActivecloud():
+    return render_template("Generation_Two/toActivecloud.html")
+
+
+@app.route('/ActiveCloud', methods=['GET', 'POST'])
+def ActiveCloud():
+    keyword = request.form.get("search_word")
     jieba.load_userdict("dict.txt")
     stopwords = [line.strip() for line in open("stopword.txt", 'r', encoding='utf-8').readlines()]
 
@@ -235,20 +240,31 @@ def form_sortBydate(page=None):
     return render_template("Generation_Two/form.html", page_data=u, search=id)
 
 
+@app.route('/form2_sortBydate/', methods=['GET', 'POST'])
+@app.route('/form2_sortBydate/<int:page>', methods=['GET', 'POST'])
+def form2_sortBydate(page=None):
+    count = second_crawl.query.filter().count()
+    u = second_crawl.query.filter().order_by(second_crawl.time.desc()).paginate(
+        page=page,
+        per_page=50,
+        error_out=False)
+    return render_template("Generation_Two/form2.html", page_data=u, search=id, count=count)
+
+
+@app.route('/form2_sortByvisit_time/', methods=['GET', 'POST'])
+@app.route('/form2_sortByvisit_time/<int:page>', methods=['GET', 'POST'])
+def form2_sortByvisit_time(page=None):
+    count = second_crawl.query.filter().count()
+    u = second_crawl.query.filter().order_by(second_crawl.visit_time.desc()).paginate(
+        page=page,
+        per_page=50,
+        error_out=False)
+    return render_template("Generation_Two/form2.html", page_data=u, search=id, count=count)
+
+
 @app.route("/index")
 def index():
     return render_template("Generation_Two/index.html")
-
-def a():
-    i = 1
-    #t = time.localtime()
-    while 1:
-        i += 1
-        # ti = time.localtime()
-        if i%100000 is 0:
-            print(i)
-        # if i%10000000 is 0:
-        #     break
 
 
 @app.route("/start_crawl1")
@@ -317,22 +333,25 @@ def start_crawl2_images():
 @app.route('/form2/<int:page>', methods=['GET', 'POST'])
 def form2(page=None):
     if request.method == 'GET':
+        count = second_crawl.query.filter().count()
         cord = second_crawl.query.order_by(second_crawl.ID).paginate(page=page, per_page=50, error_out=False)
-        return render_template('Generation_Two/form2.html', page_data=cord)
+        return render_template('Generation_Two/form2.html', page_data=cord, count=count)
     else:
         id = request.form.get("search_id")
         if id:
             if id.isdigit():
                 u = second_crawl.query.filter(second_crawl.ID==id).order_by(second_crawl.ID).paginate(page=page, per_page=10, error_out=False)
-                return render_template("Generation_Two/form2.html", page_data=u)
+                return render_template("Generation_Two/form2.html", page_data=u, count=1)
             else:
+                count = second_crawl.query.filter(second_crawl.content.like("%" + id + "%")).count()
                 u = second_crawl.query.filter(second_crawl.content.like("%" + id + "%")).order_by(second_crawl.ID).paginate(page=page,
                                                                                                      per_page=10,
                                                                                                      error_out=False)
-                return render_template("Generation_Two/form2.html", page_data=u)
+                return render_template("Generation_Two/form2.html", page_data=u, count=count)
         else:
+            count = second_crawl.query.filter().count()
             u = second_crawl.query.order_by(second_crawl.ID).paginate(page=page, per_page=10, error_out=False)
-            return render_template("Generation_Two/form2.html", page_data=u)
+            return render_template("Generation_Two/form2.html", page_data=u, count=count)
 
 
 @app.route("/f_delete/", methods=['GET'])

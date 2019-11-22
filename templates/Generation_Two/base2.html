@@ -38,9 +38,10 @@
             </div>
             <div class="col-3 search-top">
               <!-- <a href="#"><span class="fa fa-search"></span></a> -->
-              <form action="#" class="search-top-form">
+              <form action="/WordCloudData" class="search-top-form">
                 <span class="icon fa fa-search"></span>
                 <input type="text" id="s" placeholder="请输入查询关键字...">
+
               </form>
             </div>
           </div>
@@ -57,43 +58,38 @@
       </div>
 
       <nav class="navbar navbar-expand-md  navbar-light bg-light">
-        <div class="container">
-
-
-          <div class="collapse navbar-collapse" id="navbarMenu">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">主页</a>
+        <div class="container" >
+          <div class="collapse navbar-collapse" id="navbarMenu" >
+            <ul class="navbar-nav mx-auto" >
+              <li class="nav-item" style="">
+                <a class="nav-link active" href="/index">主页</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="category.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">要闻详情</a>
+              <li class="nav-item dropdown" style="">
+                <a class="nav-link dropdown-toggle" href="/form2" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">要闻详情</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="category.html">新闻表单</a>
-<!--                  <a class="dropdown-item" href="category.html"></a>-->
-<!--                  <a class="dropdown-item" href="category.html">Dubai</a>-->
-<!--                  <a class="dropdown-item" href="category.html">Africa</a>-->
-<!--                  <a class="dropdown-item" href="category.html">South America</a>-->
+{#                  <a class="dropdown-item" href="/form">新闻表单</a>#}
+                    <a class="dropdown-item" href="/form2">新闻表单</a>
                 </div>
 
               </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="category.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">要闻分析</a>
+              <li class="nav-item dropdown" style="">
+                <a class="nav-link dropdown-toggle" href="/WordCloudData" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">要闻分析</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown05">
-                  <a class="dropdown-item" href="category.html">可视化图</a>
+                  <a class="dropdown-item" href="/WordCloudData">可视化图</a>
+                    <a class="dropdown-item" href="/toActivecloud">动态词云图</a>
 <!--                  <a class="dropdown-item" href="category.html">直方图</a>-->
 <!--                  <a class="dropdown-item" href="category.html">Adventure</a>-->
 <!--                  <a class="dropdown-item" href="category.html">Travel</a>-->
 <!--                  <a class="dropdown-item" href="category.html">Business</a>-->
                 </div>
-
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">关于我们</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">联系我们</a>
-              </li>
+{#              <li class="nav-item">#}
+{#                <a class="nav-link" href="about.html">关于我们</a>#}
+{#              </li>#}
+{#              <li class="nav-item">#}
+{#                <a class="nav-link" href="contact.html">联系我们</a>#}
+{#              </li>#}
             </ul>
 
           </div>
@@ -101,6 +97,7 @@
       </nav>
     </header>
     <!-- END header -->
+
 {% block main%}{% endblock %}
 
 </body>
