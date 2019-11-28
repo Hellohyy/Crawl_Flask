@@ -27,6 +27,11 @@ def base2():
     return render_template("Generation_Two/index.html")
 
 
+@app.route('/D3Force')
+def D3Force():
+    return render_template("Generation_Two/D3Force.html")
+
+
 @app.route('/toActivecloud')
 def toActivecloud():
     return render_template("Generation_Two/toActivecloud.html")
@@ -75,40 +80,44 @@ def WordCloudData():
     if request.method == 'POST':
     # if kd is not None:
         keyword = request.form.get("search_word")
-        jieba.load_userdict("dict.txt")
-        stopwords = [line.strip() for line in open("stopword.txt", 'r', encoding='utf-8').readlines()]
 
-        allwords = []
-        words_count = []
-        news_titles =""
-        search_content = keyword
-
-        news = second_crawl.query.filter(second_crawl.content.like("%" + search_content + "%")).all()
-        # news = first_crawl.query.filter(first_crawl.Title.like("%" + search_content + "%")).all()
-        for each_news in news:
-            each_title = each_news.Title
-            news_titles = news_titles + " "+ str(each_title)
-            jieba_each_title = jieba.cut(each_title, cut_all=False)
-            for word in jieba_each_title:
-                if word not in allwords:
-                    if word not in stopwords:
-                        if len(word) is not 1:
-                            allwords.append(str(word))
-                            words_count.append(1)
-                else:
-                    words_count[allwords.index(word)] += 1
-        word_list = []
-        dict_sort = {}
-        for i in range(len(allwords)):
-            dict_sort[allwords[i]] = words_count[i]
-            dict= {}
-            dict['text'] = allwords[i]
-            dict['size'] = words_count[i]
-            word_list.append(dict)
         # return render_template("D3Chart.html", words_list=word_list, allwords=allwords, words_count=words_count)
-        return render_template("Generation_Two/D3Chart.html", words_list=word_list, words=sorted(dict_sort.items(), key=lambda d:d[1], reverse=True), keyword=keyword)
+        # return render_template("Generation_Two/D3Chart.html", words_list=word_list, words=sorted(dict_sort.items(), key=lambda d:d[1], reverse=True), keyword=keyword)
     else:
-        return render_template("Generation_Two/D3Chart.html", words_list=None, words=None, keyword="输入关键词")
+        #return render_template("Generation_Two/D3Chart.html", words_list=None, words=None, keyword="输入关键词")
+        keyword = "教育"
+    jieba.load_userdict("dict.txt")
+    stopwords = [line.strip() for line in open("stopword.txt", 'r', encoding='utf-8').readlines()]
+
+    allwords = []
+    words_count = []
+    news_titles = ""
+    search_content = keyword
+
+    news = second_crawl.query.filter(second_crawl.content.like("%" + search_content + "%")).all()
+    # news = first_crawl.query.filter(first_crawl.Title.like("%" + search_content + "%")).all()
+    for each_news in news:
+        each_title = each_news.Title
+        news_titles = news_titles + " " + str(each_title)
+        jieba_each_title = jieba.cut(each_title, cut_all=False)
+        for word in jieba_each_title:
+            if word not in allwords:
+                if word not in stopwords:
+                    if len(word) is not 1:
+                        allwords.append(str(word))
+                        words_count.append(1)
+            else:
+                words_count[allwords.index(word)] += 1
+    word_list = []
+    dict_sort = {}
+    for i in range(len(allwords)):
+        dict_sort[allwords[i]] = words_count[i]
+        dict = {}
+        dict['text'] = allwords[i]
+        dict['size'] = words_count[i]
+        word_list.append(dict)
+    return render_template("Generation_Two/D3Chart.html", words_list=word_list,
+                           words=sorted(dict_sort.items(), key=lambda d: d[1], reverse=True), keyword=keyword)
 
 
 @app.route('/click_WordCloudData/<string:kd>', methods=['GET', 'POST'])

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="utf-8">
-    <title>Winds Tag Ball Demo</title>
+{% extends './Generation_Two/base2.html' %}
+
+{% block title %}动态词云图{% endblock %}
+{% block main %}
+    <div class="bd"></div>
     <script src="{{ url_for("static", filename="js/jquery-1.11.2.min.js") }}"></script>
     <style>
-body {background: #ffffff center 230px;}
+#bd {background: #ffffff center 230px;}
 #div1 {position:relative; width:550px; height:550px; margin: 20px auto 0; }
 #div1 a {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei;
     {#color: #0b85ff; #}
@@ -218,6 +218,7 @@ function sineCosine( a, b, c)
 $(document).ready(function(){
     var i=0;
     var oTag=null;
+    bd=document.getElementsByClassName('bd');
     {#$.getJSON( "{{ url_for("static",filename="test.json") }}",#}
     data = JSON.parse({{ datas|tojson }})
         var items = [];
@@ -230,7 +231,7 @@ $(document).ready(function(){
             {#style:" border:1px solid #96c2f1;background:#eff7ff",#}
             ALIGN: "center",
             html: items.join( "" )
-        }).appendTo( "body" );
+        }).appendTo( bd );
         //console.log($('div'));
 
         oDiv=document.getElementById('div1');
@@ -274,8 +275,6 @@ $(document).ready(function(){
 });
 
     </script>
-</head>
-<body>
 <script>
 function myFunction() {
     var person = prompt("请输入密码");
@@ -288,5 +287,4 @@ function myFunction() {
 {#    <button onclick="myFunction()">Try it</button>#}
 
 
-</body>
-</html>
+{% endblock %}
