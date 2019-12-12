@@ -2,69 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8273df95-0338-4562-9e03-ed2d6e38888a" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/cucCrawl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cucCrawl.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Generation_Two/D3Force.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Generation_Two/D3Force.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Generation_Two/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Generation_Two/base2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/autoflake-script.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/autoflake.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/bandit-baseline.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/bandit-config-generator.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/bandit.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/black.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/blackd.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/bumpversion.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/coverage-3.7.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/coverage.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/coverage3.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/coveralls.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/doc8.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/f2py.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/flake8.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/flask.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/isort.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/keyring.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pbr.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pkginfo.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/py.test.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pybabel.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pycodestyle.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pydocstyle.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyflakes.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pygmentize.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pytest.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyupgrade.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/restructuredtext-lint-script.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/restructuredtext-lint.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst-lint-script.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst-lint.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2html.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2html4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2html5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2latex.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2man.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2odt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2odt_prepstyles.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2pseudoxml.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2s5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2xetex.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2xml.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/rstpep2html.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/sphinx-apidoc.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/sphinx-autogen.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/sphinx-build.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/sphinx-quickstart.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/tokenize-rt.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/tox-quickstart.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/tox.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/tqdm.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/twine.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/virtualenv.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/whataformatter.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/whatalinter.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/wheel.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/wordcloud_cli.exe" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,10 +15,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/start.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="689" column="9" lean-forward="true" selection-start-line="689" selection-start-column="9" selection-end-line="689" selection-end-column="9" />
+            <state relative-caret-position="-263">
+              <caret line="675" column="16" lean-forward="true" selection-start-line="675" selection-start-column="16" selection-end-line="675" selection-end-column="16" />
               <folding>
                 <element signature="e#0#77#0" expanded="true" />
+                <element signature="e#20232#20999#0" />
+                <element signature="e#21050#24807#0" />
               </folding>
             </state>
           </provider>
@@ -498,12 +438,12 @@
       <workItem from="1576066248612" duration="5860000" />
       <workItem from="1576072511325" duration="1698000" />
       <workItem from="1576074260474" duration="710000" />
-      <workItem from="1576136965271" duration="211000" />
+      <workItem from="1576136965271" duration="1210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222930000" />
+    <option name="totallyTimeSpent" value="223746000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -516,7 +456,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="128" y="60" width="1204" height="752" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21297108" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -905,10 +844,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/start.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="689" column="9" lean-forward="true" selection-start-line="689" selection-start-column="9" selection-end-line="689" selection-end-column="9" />
+        <state relative-caret-position="-263">
+          <caret line="675" column="16" lean-forward="true" selection-start-line="675" selection-start-column="16" selection-end-line="675" selection-end-column="16" />
           <folding>
             <element signature="e#0#77#0" expanded="true" />
+            <element signature="e#20232#20999#0" />
+            <element signature="e#21050#24807#0" />
           </folding>
         </state>
       </provider>
