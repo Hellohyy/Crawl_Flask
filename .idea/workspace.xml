@@ -2,10 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8273df95-0338-4562-9e03-ed2d6e38888a" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/cucCrawl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cucCrawl.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Generation_Two/ActiveCloud.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Generation_Two/ActiveCloud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Generation_Two/D3Force.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Generation_Two/D3Force.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Generation_Two/base2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Generation_Two/base2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/autoflake-script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/autoflake.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/bandit-baseline.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/bandit-config-generator.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/bandit.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/black.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/blackd.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/bumpversion.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/coverage-3.7.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/coverage.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/coverage3.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/coveralls.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/doc8.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/f2py.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/flake8.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/flask.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/isort.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/keyring.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pbr.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pkginfo.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/py.test.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pybabel.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pycodestyle.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pydocstyle.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyflakes.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pygmentize.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pytest.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pyupgrade.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/restructuredtext-lint-script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/restructuredtext-lint.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst-lint-script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst-lint.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2html.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2html4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2html5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2latex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2man.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2odt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2odt_prepstyles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2pseudoxml.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2s5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2xetex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rst2xml.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/rstpep2html.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/sphinx-apidoc.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/sphinx-autogen.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/sphinx-build.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/sphinx-quickstart.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/tokenize-rt.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/tox-quickstart.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/tox.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/tqdm.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/twine.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/virtualenv.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/whataformatter.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/whatalinter.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/wheel.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/wordcloud_cli.exe" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/start.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-462">
-              <caret line="36" column="62" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="62" />
+            <state relative-caret-position="111">
+              <caret line="689" column="9" lean-forward="true" selection-start-line="689" selection-start-column="9" selection-end-line="689" selection-end-column="9" />
               <folding>
                 <element signature="e#0#77#0" expanded="true" />
               </folding>
@@ -27,70 +86,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/Generation_Two/ActiveCloud.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Generation_Two/Xiyouji.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="233" column="26" lean-forward="true" selection-start-line="233" selection-start-column="26" selection-end-line="233" selection-end-column="26" />
+            <state relative-caret-position="2831">
+              <caret line="149" column="101" selection-start-line="149" selection-start-column="101" selection-end-line="149" selection-end-column="101" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Generation_Two/D3Chart.html">
+        <entry file="file://$PROJECT_DIR$/templates/Generation_Two/D3Force2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" selection-end-line="2" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crawl.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1444">
-              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
-              <folding>
-                <element signature="e#24#52#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Generation_Two/D3test.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Generation_Two/D3Force.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="186" column="9" lean-forward="true" selection-end-line="187" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Generation_Two/base2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="42" column="88" selection-start-line="42" selection-start-column="88" selection-end-line="42" selection-end-column="88" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Generation_Two/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+            <state relative-caret-position="-521">
+              <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -108,17 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>population.csv</find>
-      <find>let</find>
-      <find>word_count</find>
-      <find>Cloud</find>
-      <find>country_list</find>
-      <find>country_svg</find>
-      <find>country_linear</find>
-      <find>data_linear</find>
-      <find>country_rect_width</find>
-      <find>text</find>
-      <find>del</find>
       <find>test</find>
       <find>.blue</find>
       <find>render_template</find>
@@ -126,6 +124,29 @@
       <find>form2</find>
       <find>wordclo</find>
       <find>Active</find>
+      <find>null</find>
+      <find>[]</find>
+      <find>[]][]</find>
+      <find>width</find>
+      <find>x1</find>
+      <find>star</find>
+      <find>ACTIVE</find>
+      <find>name</find>
+      <find>color</find>
+      <find>link</find>
+      <find>tool</find>
+      <find>svg1</find>
+      <find>绘制</find>
+      <find>d.name</find>
+      <find>return</find>
+      <find>click</find>
+      <find>text</find>
+      <find>id</find>
+      <find>links</find>
+      <find>tooltip</find>
+      <find>vx</find>
+      <find>宼栋</find>
+      <find>info</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,13 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/templates/p.html" />
-        <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/dict.txt" />
-        <option value="$PROJECT_DIR$/qinghua.txt" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/searchform.html" />
         <option value="$PROJECT_DIR$/templates/search_form.html" />
         <option value="$PROJECT_DIR$/templates/wordcloud.html" />
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/pyecharts/charts/basic_charts/wordcloud.py" />
@@ -176,17 +190,29 @@
         <option value="$PROJECT_DIR$/crawl.py" />
         <option value="$PROJECT_DIR$/templates/Generation_Two/toActivecloud.html" />
         <option value="$PROJECT_DIR$/templates/Generation_Two/form2.html" />
-        <option value="$PROJECT_DIR$/templates/Generation_Two/D3Force.html" />
-        <option value="$PROJECT_DIR$/templates/Generation_Two/base2.html" />
-        <option value="$PROJECT_DIR$/start.py" />
         <option value="$PROJECT_DIR$/templates/Generation_Two/ActiveCloud.html" />
+        <option value="$PROJECT_DIR$/static/dbmovies.json" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/Generation_Two/Wordnet.html" />
+        <option value="$PROJECT_DIR$/templates/Generation_Two/index3.html" />
+        <option value="$PROJECT_DIR$/templates/Generation_Two/D3Force.html" />
+        <option value="$PROJECT_DIR$/static/football.json" />
+        <option value="$PROJECT_DIR$/static/xiyouji.json" />
+        <option value="$PROJECT_DIR$/static/Xiyouji_result_datas.json" />
+        <option value="$PROJECT_DIR$/static/dbmovies_result_datas.json" />
+        <option value="$PROJECT_DIR$/homework6.py" />
+        <option value="$PROJECT_DIR$/templates/Generation_Two/football.html" />
+        <option value="$PROJECT_DIR$/templates/Generation_Two/base2.html" />
+        <option value="$PROJECT_DIR$/templates/Generation_Two/Xiyouji.html" />
+        <option value="$PROJECT_DIR$/templates/Generation_Two/D3Force2.html" />
+        <option value="$PROJECT_DIR$/start.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="362" />
-    <option name="y" value="88" />
-    <option name="width" value="1319" />
+    <option name="x" value="160" />
+    <option name="y" value="75" />
+    <option name="width" value="1505" />
     <option name="height" value="940" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -195,7 +221,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,17 +230,6 @@
             </path>
             <path>
               <item name="cucCrawl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cucCrawl" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cucCrawl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cucCrawl" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="Generation_Two" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cucCrawl" type="b2602c69:ProjectViewProjectNode" />
               <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -243,24 +257,6 @@
               <item name="Python" type="462c0819:PsiDirectoryNode" />
               <item name="cucCrawl" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cucCrawl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (cucCrawl) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="cucCrawl" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cucCrawl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="外部库" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (cucCrawl) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Python" type="462c0819:PsiDirectoryNode" />
-              <item name="cucCrawl" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cucCrawl" type="b2602c69:ProjectViewProjectNode" />
@@ -283,6 +279,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,7 +287,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/Generation_Two" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -310,10 +307,10 @@
       <recent name="D:\Python\cucCrawl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Python\cucCrawl\static\images" />
-      <recent name="D:\Python\cucCrawl" />
       <recent name="D:\Python\cucCrawl\templates\Generation_Two" />
+      <recent name="D:\Python\cucCrawl" />
       <recent name="D:\Python\cucCrawl\static" />
+      <recent name="D:\Python\cucCrawl\static\images" />
       <recent name="D:\Python\cucCrawl\static\js2" />
     </key>
   </component>
@@ -329,7 +326,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flask server.Flask (start.py) (1)">
+  <component name="RunManager" selected="Flask server.Flask (start.py)">
+    <configuration name="Flask (app.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
+      <module name="cucCrawl" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="Flask (start.py) (1)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
       <module name="cucCrawl" />
       <option name="target" value="$PROJECT_DIR$/start.py" />
@@ -410,6 +422,22 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="Flask (start.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
+      <option name="flaskDebug" value="true" />
+      <module name="cucCrawl" />
+      <option name="target" value="$PROJECT_DIR$/start.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="cucCrawl" type="Python.FlaskServer">
       <option name="flaskDebug" value="true" />
       <module name="cucCrawl" />
@@ -429,13 +457,14 @@
     <list>
       <item itemvalue="Flask server.cucCrawl" />
       <item itemvalue="Flask server.Flask (start.py)" />
+      <item itemvalue="Flask server.Flask (app.py)" />
       <item itemvalue="Flask server.Flask (start.py) (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Flask server.Flask (start.py)" />
         <item itemvalue="Flask server.Flask (start.py) (1)" />
-        <item itemvalue="Flask server.Flask (start.py)" />
-        <item itemvalue="Flask server.Flask (start.py)" />
+        <item itemvalue="Flask server.Flask (app.py)" />
         <item itemvalue="Flask server.Flask (start.py)" />
         <item itemvalue="Flask server.Flask (start.py)" />
       </list>
@@ -459,11 +488,22 @@
       <workItem from="1573795940397" duration="12239000" />
       <workItem from="1574322316401" duration="30246000" />
       <workItem from="1574934427689" duration="3107000" />
+      <workItem from="1574950948661" duration="20579000" />
+      <workItem from="1575009495267" duration="6225000" />
+      <workItem from="1575530790763" duration="18167000" />
+      <workItem from="1575555031111" duration="1080000" />
+      <workItem from="1575556196166" duration="11803000" />
+      <workItem from="1575596079626" duration="14455000" />
+      <workItem from="1575611648624" duration="1698000" />
+      <workItem from="1576066248612" duration="5860000" />
+      <workItem from="1576072511325" duration="1698000" />
+      <workItem from="1576074260474" duration="710000" />
+      <workItem from="1576136965271" duration="211000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140261000" />
+    <option name="totallyTimeSpent" value="222930000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -475,50 +515,51 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="290" y="71" width="1055" height="752" extended-state="0" />
+    <frame x="128" y="60" width="1204" height="752" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2731855" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21297108" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32744783" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27403846" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32741934" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27258065" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32852563" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32419354" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32852563" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32741934" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="调试" order="11" weight="0.32851985" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.2516129" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.31935483" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32692307" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="aiXcoder" order="3" side_tool="true" />
-      <window_info anchor="right" id="SciView" order="4" weight="0.32938188" />
+      <window_info anchor="right" id="SciView" order="4" visible="true" weight="0.15775636" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19390348" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19106047" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32636657" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32741934" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27258065" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3291367" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32419354" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32741934" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="调试" order="11" weight="0.32851985" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.27974278" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32733813" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32096773" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32692307" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -531,46 +572,11 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/cucCrawl$Flask__start_py_.coverage" NAME="Flask (start.py) Coverage Results" MODIFIED="1573725350875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/cucCrawl$Flask__start_py___1_.coverage" NAME="Flask (start.py) (1) Coverage Results" MODIFIED="1574346903902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cucCrawl$Flask__start_py_.coverage" NAME="Flask (start.py) Coverage Results" MODIFIED="1576074277466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cucCrawl$Flask__start_py___1_.coverage" NAME="Flask (start.py) (1) Coverage Results" MODIFIED="1575003759469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/cucCrawl$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1575003344375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/css2/animate.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stopword.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="749" column="3" selection-start-line="749" selection-start-column="3" selection-end-line="749" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js2/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/pie.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/person_testimonial_1.jpg" />
-    <entry file="file://$PROJECT_DIR$/images/person_6.jpg" />
-    <entry file="file://$PROJECT_DIR$/images/img_6.jpg" />
-    <entry file="file://$PROJECT_DIR$/images/img_5.jpg" />
-    <entry file="file://$PROJECT_DIR$/images/big_image_1.jpg" />
-    <entry file="file://$PROJECT_DIR$/images/big_image_3.jpg" />
-    <entry file="file://$PROJECT_DIR$/images/img_4.jpg" />
-    <entry file="file://$PROJECT_DIR$/static/images/person_testimonial_1.jpg" />
-    <entry file="file://$PROJECT_DIR$/static/images/img_8.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/images/img_6.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/images/img_5.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/images/img_4.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/images/img_3.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -731,36 +737,6 @@
     <entry file="file://$PROJECT_DIR$/templates/search_form.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/base2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="42" column="88" selection-start-line="42" selection-start-column="88" selection-end-line="42" selection-end-column="88" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#h1#0;n#div#0;n#div#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
-          <caret line="36" column="62" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Generation_Two/toActivecloud.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -771,10 +747,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/form2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crawl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1444">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="1330">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="e#24#52#0" expanded="true" />
           </folding>
@@ -784,31 +767,149 @@
     <entry file="file://$PROJECT_DIR$/templates/Generation_Two/D3test.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/D3Chart.html">
+    <entry file="file://$PROJECT_DIR$/static/dbmovies.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" selection-end-line="2" selection-end-column="34" />
+        <state relative-caret-position="101">
+          <caret column="1713" selection-start-column="1713" selection-end-column="1713" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/form2.html">
+    <entry file="file://$PROJECT_DIR$/static/console-export-2019-11-29_3-38-0.txt" />
+    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1102">
-          <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/D3Force.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="186" column="9" lean-forward="true" selection-end-line="187" />
+        <state relative-caret-position="114">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Generation_Two/ActiveCloud.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="233" column="26" lean-forward="true" selection-start-line="233" selection-start-column="26" selection-end-line="233" selection-end-column="26" />
+        <state relative-caret-position="-209">
+          <caret line="222" column="30" selection-start-line="222" selection-start-column="30" selection-end-line="222" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/Wordnet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/D3Chart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/timg.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/triples.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/dbmovies_result.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="48" lean-forward="true" selection-start-column="48" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/football.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/xiyouji.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="78825" selection-start-line="8" selection-start-column="78825" selection-end-line="8" selection-end-column="78825" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/football.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/homework6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/base2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="82" column="68" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/Xiyouji_result_datas.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6777" selection-start-column="6777" selection-end-column="6777" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/dbmovies_result_datas.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="71" selection-end-column="78825" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/D3Force.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="22" column="23" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/index3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/Xiyouji.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2831">
+          <caret line="149" column="101" selection-start-line="149" selection-start-column="101" selection-end-line="149" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Generation_Two/D3Force2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-521">
+          <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="689" column="9" lean-forward="true" selection-start-line="689" selection-start-column="9" selection-end-line="689" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#77#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,0 +1,146 @@
+{% extends './Generation_Two/base2.html' %}
+
+{% block title %}Wordnet{% endblock %}
+{% block head %}
+    <script src="../static/js/d3.v3.min.js" charset="utf-8"></script>
+    <style type="text/css">
+        path {
+            fill: none;
+            stroke: #666;
+            stroke-width: 1.5px;
+        }
+
+        circle {
+            stroke: #333;
+            stroke-width: 1.5px;
+        }
+
+        text {
+            font: 10px sans-serif;
+            pointer-events: none;
+        }
+    </style>
+{% endblock %}
+
+{% block main %}
+<form class="navbar-form navbar-left" action="/Wordnet">
+    <div class="form-group">
+        <input type="text" style="width:300px;" class="form-control" placeholder="Key Words" name="wanted">
+    </div>
+    <button type="submit" class="btn btn-default" style="color:#a40000; font-size:16px;">搜索</button>
+</form>
+<div id="wordnet_view"></div>
+<script type="text/javascript">
+    var nodes = {{ wordnet| tojson }};
+    var edges = {{ wordnetedgs| tojson }};
+
+    var width = (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) * 0.8;
+    var height = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) * 0.8;
+    var color = d3.scale.category20();
+    var force = d3.layout.force()
+        .nodes(nodes)
+        .links(edges)
+        .size([width, height])
+        .linkDistance(100)
+        .charge(-1200)
+        .on("tick", tick)
+        .start();
+
+    var svg = d3.select("#wordnet_view")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+    //箭头绘制
+    var defs = svg.append("defs");
+    var radius = 10;
+    var arrowMarker = defs.append("marker")
+        .attr("id", "arrow")
+        .attr("markerUnits", "strokeWidth")
+        .attr("markerWidth", "4")
+        .attr("markerHeight", "4")
+        .attr("viewBox", "0 0 4 4")
+        .attr("refX", 12 + radius / 8 - 2)   //实际是radius/strokeWidth
+        .attr("refY", 2)
+        .attr("orient", "auto");
+
+    var arrow_path = "M0,1 L4,2 L0,3 L0,0";
+
+    arrowMarker.append("path")
+        .attr("d", arrow_path);
+
+    //用路径创建边
+    var path = svg.selectAll("path")
+        .data(edges)
+        .enter()
+        .append("path")
+        .attr("id", function (d, i) {
+            return "edgepath" + i;
+        })
+        .attr("class", "edges")
+        .attr("marker-end", "url(#arrow)");
+
+    var circle = svg.selectAll("circle")
+        .data(nodes)
+        .enter()
+        .append("circle")
+        .attr("class", "circle")
+        .attr("r", radius)
+        .attr("fill", function (d, i) {
+            return color(i);
+        })
+        .style("opacity", 1)
+        .call(force.drag)
+        .on("dblclick",function (d) {
+            location.href = "/Wordnet?wanted=" + d.name;
+        });
+
+    var nodetext = svg.selectAll(".nodeText")
+        .data(nodes)
+        .enter()
+        .append("text")
+        .attr("class", "nodeText")
+        .attr("x", function (d) {
+            return d.x;
+        })
+        .attr("y", function (d) {
+            return d.y;
+        })
+        .attr("dx", "-1.5em")
+        .attr("dy", "2em")
+        .text(function (d) {
+            return d.name;
+        });
+    var pathtext = svg.selectAll('.pathText')
+        .data(edges)
+        .enter()
+        .append("text")
+        .attr("class", "pathText")
+        .append('textPath')
+        .attr("text-anchor", "middle")//居中
+        .attr("startOffset", "50%")
+        .attr('xlink:href', function (d, i) {
+            return "#edgepath" + i;
+        })
+        .text(function (d) {
+            return d.relation;
+        });
+
+    function tick() {
+        path.attr("d", function (d) {
+            var dx = d.target.x - d.source.x;//增量
+            var dy = d.target.y - d.source.y;
+            return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
+        });
+        circle.attr("transform", function (d) {
+            return "translate(" + d.x + "," + d.y + ")";
+        });
+        nodetext.attr("x", function (d) {
+            return d.x;
+        });
+        nodetext.attr("y", function (d) {
+            return d.y;
+        });
+    }
+
+</script>
+{% endblock %}

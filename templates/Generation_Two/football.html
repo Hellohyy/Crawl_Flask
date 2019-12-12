@@ -1,0 +1,129 @@
+<html>
+  <head>
+	<title>
+		D3力导图
+	</title>
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+  <body style=" opacity:1">
+  <style>
+			.tooltip{
+				position: absolute;
+				width: 240px;
+				height: auto;
+				font-family: simsun;
+				font-size: 10px;
+				text-align: left;
+				color: black;
+				border-width: 1px solid black;
+				background-color: 7FFF00;
+				border-radius: 3px;
+			}
+			.tooltip:after{
+				content: '';
+				position: absolute;
+				bottom: 100%;
+				left: 20%;
+				margin-left: -3px;
+				width: 0;
+				height: 0;
+				border-bottom: 12px solid black;
+				border-right: 12px solid transparent;
+				border-left: 12px solid transparent;
+			}
+	    </style>
+  <script src="static/js/d3.v3.min.js" charset="utf-8" ></script>
+  <script type="text/javascript">
+
+		var  width=(window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth)*0.98;
+		var  height=(window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight)*0.9;
+		var  img_h=50;
+		var  img_w=50;
+		var  radius=10;
+		var svg=d3.select("body")
+                .append("svg")
+                .attr("width",width)
+                .attr("height",height);
+
+		var nodes={{nodes|tojson}};
+		var edges={{links|tojson}};
+
+		var force=d3.layout.force()
+                .nodes(nodes)
+				.links(edges)
+				.size([width,height])
+				.linkDistance(150)
+				.charge(-600)
+                .start();
+        //提示框部分
+		var tooltip=d3.selectAll("body")
+                    .append("div")
+                    .attr("class","tooltip")
+                    .style("opacity",0.0);
+		//绘制
+		var color=d3.scale.category20();
+
+		var lines=svg.selectAll(".forceLine")
+	             .data(edges)
+				 .enter()
+          	     .append("line")
+				 .attr("class","forceLine")
+				 .style("stroke","gray")
+				 .style("opacity",0.7)
+                 .style("stroke-width",1);
+
+		var edges_text = svg.selectAll(".linetext")
+                                .data(edges)
+                                .enter()
+                                .append("text")
+                                .attr("class","linetext")
+								.text(function(d){
+                                    return d.relation;})
+								.style("stroke","gray")
+								.style("font-size",8);
+		var circles=svg.selectAll("forceCircle")
+	               .data(nodes)
+				   .enter()
+				   .append("circle")
+				   .attr("class","forceCircle")
+				   .attr("r",function(d,i){return d.weight*3;})
+				   .style("stroke","DarkGray")
+				   .style("stroke-width","1.0px")
+				   .attr("fill",function(d,i){return color(i);})
+				   .on("mouseover",function(d,i){    //加入提示框
+                        tooltip.html(d.intro)
+                               .style("left",(d3.event.pageX)+"px")
+                               .style("top",(d3.event.pageY+20)+"px")
+                               .style("opacity",1.0);
+					})
+				   .call(force.drag);
+
+	    var texts=svg.selectAll(".forceText")
+                 .data(nodes)
+				 .enter()
+				 .append("text")
+				 .attr("class","forceText")
+				 .attr("x",function(d){return d.x;})
+				 .attr("y",function(d){return d.y;})
+				 .style("stroke", "#336666")
+				 .style("font-size","10px")
+                 .attr("dx","-1.5em")
+				 .attr("dy","1.5em")
+				 .text(function(d){return d.name;});
+
+		force.on("tick",function(){
+	          lines.attr("x1",function(d){return d.source.x;});
+              lines.attr("y1",function(d){return d.source.y;});
+              lines.attr("x2",function(d){return d.target.x;});
+              lines.attr("y2",function(d){return d.target.y;});
+			  circles.attr("cx",function(d){return d.x;});
+			  circles.attr("cy",function(d){return d.y;});
+			  texts.attr("x",function(d){return d.x;});
+			  texts.attr("y",function(d){return d.y;});
+			  edges_text.attr("x",function(d){ return (d.source.x + d.target.x) / 2 ; });
+              edges_text.attr("y",function(d){ return (d.source.y + d.target.y) / 2 ; });
+		});
+	</script>
+  </body>
+</html>
